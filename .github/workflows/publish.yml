@@ -1,28 +1,13 @@
-# SPDX-FileCopyrightText: 2021 Paul
-# SPDX-FileCopyrightText: 2022 0x6273
-# SPDX-FileCopyrightText: 2022 Paul Ritter
-# SPDX-FileCopyrightText: 2022 Vera Aguilera Puerto
-# SPDX-FileCopyrightText: 2023 DrSmugleaf
-# SPDX-FileCopyrightText: 2023 metalgearsloth
-# SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT
-# SPDX-FileCopyrightText: 2024 Debug
-# SPDX-FileCopyrightText: 2024 Fansana
-# SPDX-FileCopyrightText: 2024 FoxxoTrystan
-# SPDX-FileCopyrightText: 2024 Matt
-# SPDX-FileCopyrightText: 2024 Pieter-Jan Briers
-# SPDX-FileCopyrightText: 2025 sleepyyapril
-#
-# SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
-
 name: Publish
 
 concurrency:
   group: publish
+  cancel-in-progress: true
 
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 6 * * *'
+    - cron: '0 12 * * sat'
 
 jobs:
   build:
@@ -32,12 +17,12 @@ jobs:
     - name: Install dependencies
       run: sudo apt-get install -y python3-paramiko python3-lxml
 
-    - uses: actions/checkout@v3.6.0
+    - uses: actions/checkout@v4.2.2
       with:
         ref: main
         submodules: 'recursive'
     - name: Setup .NET Core
-      uses: actions/setup-dotnet@v3.2.0
+      uses: actions/setup-dotnet@v4.1.0
       with:
         dotnet-version: 10.0.x
 
@@ -53,27 +38,26 @@ jobs:
       run: dotnet build Content.Packaging --configuration Release --no-restore /m
 
     - name: Package server
-      run: dotnet run --project Content.Packaging server --platform win-x64 --platform linux-x64 --platform osx-x64 --platform linux-arm64
+      run: dotnet run --project Content.Packaging server --platform win-x64 --platform win-arm64 --platform linux-x64 --platform linux-arm64 --platform osx-x64 --platform osx-arm64
 
     - name: Package client
       run: dotnet run --project Content.Packaging client --no-wipe-release
 
     - name: Publish version
-      run: python3 Tools/publish_multi_request.py
+      run: Tools/publish_multi_request.py
       env:
         PUBLISH_TOKEN: ${{ secrets.PUBLISH_TOKEN }}
         GITHUB_REPOSITORY: ${{ vars.GITHUB_REPOSITORY }}
-#        ROBUST_CDN_URL: ${{ vars.ROBUST_CDN_URL }}
-#        FORK_ID: ${{ vars.FORK_ID }}
 
-    # - name: Publish changelog (Discord)
-    #   run: Tools/actions_changelogs_since_last_run.py
-    #   env:
-    #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-    #     CHANGELOG_DIR: ${{ vars.CHANGELOG_DIR }}
-    #     DISCORD_WEBHOOK_URL: ${{ secrets.CHANGELOG_DISCORD_WEBHOOK }}
+#    - name: Publish changelog (Discord)
+#      continue-on-error: true
+#      run: Tools/actions_changelogs_since_last_run.py
+#      env:
+#        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+#        DISCORD_WEBHOOK_URL: ${{ secrets.CHANGELOG_DISCORD_WEBHOOK }}
 
-    - name: Publish changelog (RSS)
-      run: python3 Tools/actions_changelog_rss.py
-      env:
-        CHANGELOG_RSS_KEY: ${{ secrets.CHANGELOG_RSS_KEY }}
+#    - name: Publish changelog (RSS)
+#      continue-on-error: true
+#      run: Tools/actions_changelog_rss.py
+#      env:
+#        CHANGELOG_RSS_KEY: ${{ secrets.CHANGELOG_RSS_KEY }}
