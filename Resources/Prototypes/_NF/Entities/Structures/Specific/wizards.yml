@@ -1,0 +1,67 @@
+# Everdream start
+#region Inf. canisters
+- type: entity
+  parent: [ GasCanister ] # Everdream - unparenting from contraband
+  id: InfiniteGasCanisterOxygen # Everdream - New format ID format, originally WizardGasCanisterBottomlessOxygen
+  name: infinite canister # Everdream - I felt like changing the name and description since these work differently than on Frontier/shipforks.
+  suffix: Filled, Oxygen
+  description: A canister that contains an unfathomable amount of oxygen. Bluespace shenanigans are afoot, though surely it's safe?
+  components:
+    - type: Sprite
+      sprite: _NF/Structures/Specific/Wizard/canister.rsi
+      layers:
+        - state: oxygen
+          shader: unshaded
+        - state: canister
+    - type: GasCanister
+      gasMixture:
+        volume: 10000 # 1000[base canister volume] * 10 # Everdream - base container volume is 1000 except on shipforks where it's 1500
+        moles: # List of gasses for easy reference
+          - 18717.1051 # oxygen
+          - 0 # nitrogen
+          - 0 # CO2
+          - 0 # Plasma
+          - 0 # Tritium
+          - 0 # Water vapor
+          - 0 # Ammonia
+          - 0 # N2O
+          - 0 # Frezon
+        temperature: 293.15
+        immutable: true
+#   - type: StaticPrice # Everdream - price the same as default cans.
+#     price: 1250
+
+- type: entity
+  parent: [ GasCanister ] # Everdream - unparenting from contraband
+  id: InfiniteGasCanisterNitrogen # Everdream - New format ID format, originally WizardGasCanisterBottomlessNitrogen
+  name: infinite canister # Everdream - I felt like changing the name and description since these work differently than on Frontier/shipforks.
+  suffix: Filled, Nitrogen
+  description: A canister that contains an unfathomable amount of oxygen. Bluespace shenanigans are afoot, though surely it's safe?
+  components:
+    - type: Sprite
+      sprite: _NF/Structures/Specific/Wizard/canister.rsi
+      layers:
+        - state: nitrogen
+          shader: unshaded
+        - state: canister
+    - type: GasCanister
+      gasMixture:
+        volume: 10000 # 1000[base canister volume] * 10
+        moles: # List of gasses for easy reference
+          - 0 # oxygen
+          - 18717.1051 # nitrogen
+          - 0 # CO2
+          - 0 # Plasma
+          - 0 # Tritium
+          - 0 # Water vapor
+          - 0 # Ammonia
+          - 0 # N2O
+          - 0 # Frezon
+        temperature: 293.15
+        immutable: true
+#   - type: StaticPrice # Everdream - price the same as default cans.
+#     price: 1250
+
+# Everdream - Additional infinite canisters that Frontier doesn't have for some reason
+
+# Everdream end
