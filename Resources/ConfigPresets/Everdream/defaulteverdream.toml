@@ -89,6 +89,7 @@ auto_call_time = 0
 [ic]
 restricted_names = false
 name_case = false
+EtherealPassThrough = true
 
 [chat]
 max_message_length = 30000
@@ -118,3 +119,6 @@ prefix = "!"
 [transfer]
 http = true
 http_endpoint = "http://ss14.everdream.space:1212"
+
+[netres]
+limit = 10

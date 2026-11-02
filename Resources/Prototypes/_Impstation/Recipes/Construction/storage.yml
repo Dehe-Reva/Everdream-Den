@@ -1,0 +1,16 @@
+﻿- type: construction
+  id: CrateCoffinSteel
+  graph: CrateCoffinSteel
+  startNode: start
+  targetNode: cratecoffin
+  category: construction-category-storage
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canRotate: true
+  # DEN start: Add name, description, icon
+  name: steel coffin
+  description: A sturdy coffin made of steel. Sturdy, heavy, cloistering. You deserve this.
+  icon:
+    sprite: _Impstation/Structures/Storage/Crates/coffin_steel.rsi
+    state: open
+  # DEN end

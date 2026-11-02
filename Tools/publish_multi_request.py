@@ -1,10 +1,10 @@
+#!/usr/bin/env python3
+
 # SPDX-FileCopyrightText: 2024 DEATHB4DEFEAT <77995199+DEATHB4DEFEAT@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2024 flyingkarii <123355664+flyingkarii@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 sleepyyapril <123355664+sleepyyapril@users.noreply.github.com>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later AND MIT
-
-#!/usr/bin/env python3
 
 import requests
 import os
@@ -20,8 +20,8 @@ RELEASE_DIR = "release"
 # CONFIGURATION PARAMETERS
 # Forks should change these to publish to their own infrastructure.
 #
-ROBUST_CDN_URL = "https://cdn.denstation.net/"
-FORK_ID = "theden"
+ROBUST_CDN_URL = "https://cdn.lagrange14.com/"
+FORK_ID = "everdream"
 
 def main():
     session = requests.Session()

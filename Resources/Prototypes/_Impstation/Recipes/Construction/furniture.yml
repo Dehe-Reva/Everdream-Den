@@ -276,6 +276,108 @@
     state: skaedge
   # DEN end
 
+- type: construction
+  id: WallpaperCreepyEyes
+  graph: Wallpaper
+  startNode: start
+  targetNode: WallpaperCreepyEyes
+  category: construction-category-furniture
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: true
+  # DEN start: Add name, description, icon
+  name: eyeball wallpaper
+  description: It's watching you...
+  icon:
+    sprite: _Impstation/Structures/Wallmounts/wallpaper.rsi
+    state: wallpaper_creepyeyes
+  # DEN end
+
+- type: construction
+  id: WallpaperCreepyEyesCorner
+  graph: Wallpaper
+  startNode: start
+  targetNode: WallpaperCreepyEyesCorner
+  category: construction-category-furniture
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: true
+  # DEN start: Add name, description, icon
+  name: eyeball wallpaper corner
+  description: It's watching you...
+  icon:
+    sprite: _Impstation/Structures/Wallmounts/wallpaper.rsi
+    state: wallpaper_creepyeyes_edge
+  # DEN end
+
+- type: construction
+  id: WallpaperGraveyard
+  graph: Wallpaper
+  startNode: start
+  targetNode: WallpaperGraveyard
+  category: construction-category-furniture
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: true
+  # DEN start: Add name, description, icon
+  name: graveyard wallpaper
+  description: To die for.
+  icon:
+    sprite: _Impstation/Structures/Wallmounts/wallpaper.rsi
+    state: wallpaper_graveyard
+  # DEN end
+
+- type: construction
+  id: WallpaperGraveyardCorner
+  graph: Wallpaper
+  startNode: start
+  targetNode: WallpaperGraveyardCorner
+  category: construction-category-furniture
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: true
+  # DEN start: Add name, description, icon
+  name: graveyard wallpaper corner
+  description: To die for.
+  icon:
+    sprite: _Impstation/Structures/Wallmounts/wallpaper.rsi
+    state: wallpaper_graveyard_edge
+  # DEN end
+
+- type: construction
+  id: WallpaperPumpkin
+  graph: Wallpaper
+  startNode: start
+  targetNode: WallpaperPumpkin
+  category: construction-category-furniture
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: true
+  # DEN start: Add name, description, icon
+  name: pumpkin wallpaper
+  description: Festive.
+  icon:
+    sprite: _Impstation/Structures/Wallmounts/wallpaper.rsi
+    state: wallpaper_pumpkin
+  # DEN end
+
+- type: construction
+  id: WallpaperPumpkinCorner
+  graph: Wallpaper
+  startNode: start
+  targetNode: WallpaperPumpkinCorner
+  category: construction-category-furniture
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: true
+  # DEN start: Add name, description, icon
+  name: pumpkin wallpaper corner
+  description: Festive.
+  icon:
+    sprite: _Impstation/Structures/Wallmounts/wallpaper.rsi
+    state: wallpaper_pumpkin_edge
+  # DEN end
+
 # wall deco
 
 - type: construction
@@ -364,6 +466,74 @@
   # DEN end
 
 - type: construction
+  id: WallpaperBannerGhost
+  graph: WallDeco
+  startNode: start
+  targetNode: WallpaperBannerGhost
+  category: construction-category-furniture
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: true
+  # DEN start: Add name, description, icon
+  name: ghost banner
+  description: Wait, did it just move?
+  icon:
+    sprite: _Impstation/Structures/Wallmounts/wallpaper.rsi
+    state: banner_ghost
+  # DEN end
+
+- type: construction
+  id: WallpaperBannerPumpkin
+  graph: WallDeco
+  startNode: start
+  targetNode: WallpaperBannerPumpkin
+  category: construction-category-furniture
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: true
+  # DEN start: Add name, description, icon
+  name: pumpkin banner
+  description: It looks kinda tasty...
+  icon:
+    sprite: _Impstation/Structures/Wallmounts/wallpaper.rsi
+    state: banner_pumpkin
+  # DEN end
+
+- type: construction
+  id: WallpaperBannerSkeleton
+  graph: WallDeco
+  startNode: start
+  targetNode: WallpaperBannerSkeleton
+  category: construction-category-furniture
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: true
+  # DEN start: Add name, description, icon
+  name: skeleton banner
+  description: Ack ack!
+  icon:
+    sprite: _Impstation/Structures/Wallmounts/wallpaper.rsi
+    state: banner_skeleton
+  # DEN end
+
+- type: construction
+  id: WallpaperBannerSpiders
+  graph: WallDeco
+  startNode: start
+  targetNode: WallpaperBannerSpiders
+  category: construction-category-furniture
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: true
+  # DEN start: Add name, description, icon
+  name: spider banner
+  description: Some creepy crawlies. Or some friendly fuzzies. Choose your own adventure.
+  icon:
+    sprite: _Impstation/Structures/Wallmounts/wallpaper.rsi
+    state: banner_spiders
+  # DEN end
+
+- type: construction
   id: WallpaperStarsBig
   graph: WallDeco
   startNode: start
@@ -412,4 +582,24 @@
   icon:
     sprite: _Impstation/Structures/Wallmounts/wallpaper.rsi
     state: starsmoon
+  # DEN end
+
+- type: construction
+  id: MannequinSkeleton
+  graph: MannequinSkeleton
+  startNode: start
+  targetNode: mannequin
+  category: construction-category-furniture
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canRotate: true
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+  # DEN start: Add name, description, icon
+  name: plastic skeleton
+  description: Oh fuck is that a- Oh it's just plastic. Haha.
+  icon:
+    sprite: _Impstation/Structures/Decoration/plasticskeleton.rsi
+    state: plasticskeleton
   # DEN end

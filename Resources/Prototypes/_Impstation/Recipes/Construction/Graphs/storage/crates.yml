@@ -1,0 +1,25 @@
+﻿- type: constructionGraph
+  id: CrateCoffinSteel
+  start: start
+  graph:
+  - node: start
+    edges:
+    - to: cratecoffin
+      steps:
+      - material: Steel
+        amount: 5 # DEN: 30 -> 5
+        doAfter: 5 # DEN: 10 -> 5
+
+  - node: cratecoffin
+    entity: CrateCoffinSteel
+    edges:
+    - to: start
+      steps:
+      - tool: Prying
+        doAfter: 5 # DEN: 10 -> 5
+      completed:
+      - !type:SpawnPrototype
+        prototype: SheetSteel1
+        amount: 5 # DEN: 15 -> 5
+      - !type:EmptyAllContainers
+      - !type:DeleteEntity

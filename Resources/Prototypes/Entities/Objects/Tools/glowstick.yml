@@ -85,6 +85,7 @@
     - type: Tag
       tags:
       - Trash
+      - Glowstick # DEN
 
 - type: entity
   name: red glowstick

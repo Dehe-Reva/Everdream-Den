@@ -31,7 +31,7 @@
 - type: entity
   name: space tick
   id: MobTick
-  parent: SimpleSpaceMobBase
+  parent: [ SimpleSpaceMobBase, MobVentCritter ]
   description: It's a space tick, watch out for its nasty bite. CentComm reports that 90 percent of logistics leg amputations are due to space tick bites. # DeltaV - Logistics Department replacing Cargo
   components:
   - type: InputMover

@@ -51,6 +51,9 @@
   id: Fish
 
 - type: Tag
+  id: Glowstick
+
+- type: Tag
   id: Headwear
 
 - type: Tag
