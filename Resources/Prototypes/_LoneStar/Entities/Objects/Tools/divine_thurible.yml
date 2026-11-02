@@ -21,7 +21,7 @@
     sprite: _LoneStar/Objects/Tools/divinethurible.rsi
   - type: MeleeWeapon
     wideAnimationRotation: 0
-    attackRate: 0.5
+    attackRate: 0.6666
     damage:
       types:
         Blunt: 6
