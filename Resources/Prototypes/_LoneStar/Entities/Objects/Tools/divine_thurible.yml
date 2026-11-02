@@ -124,12 +124,12 @@
   - type: ItemTogglePointLight
   - type: StaticPrice
     price: 1500
-  - type: Divine
-    toggledIgnite: true
-    fireStacks: 1
-    damageOnUntrainedUse:
-      types:
-        Heat: 10
+  # - type: Divine
+  #   toggledIgnite: true
+  #   fireStacks: 1
+  #   damageOnUntrainedUse:
+  #     types:
+  #       Heat: 10
   - type: UseDelay
     delay: 3.0
   - type: Prayable
