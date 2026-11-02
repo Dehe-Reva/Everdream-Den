@@ -138,6 +138,3 @@
     notificationPrefix: prayer-chat-notify-pray
     verb: prayer-verbs-pray
     verbImage: null
-  - type: Tag
-    tags:
-     - ObjectOfSpiritualSignificance
